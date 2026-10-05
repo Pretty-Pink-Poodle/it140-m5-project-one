@@ -1,0 +1,25 @@
+START
+
+SET inventory = empty list
+
+WHILE game is running
+    DISPLAY current_room
+    DISPLAY inventory
+
+    IF current_room contains an item
+        DISPLAY item in current_room
+    END IF
+
+    PROMPT player to enter the item they want to get
+    GET player_item
+
+    IF player_item is the item in current_room
+        ADD player_item to inventory
+        REMOVE player_item from current_room
+        DISPLAY player_item + " added to inventory."
+    ELSE
+        DISPLAY "That item is not in this room."
+    END IF
+END WHILE
+
+END

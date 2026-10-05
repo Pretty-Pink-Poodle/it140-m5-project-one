@@ -1,0 +1,19 @@
+START
+
+SET current_room = "Food Court"
+
+WHILE game is running
+    DISPLAY current_room
+    PROMPT player to enter a direction: North, South, East, or West
+    GET player_direction
+
+    IF player_direction is a valid direction from current_room
+        MOVE player to the room in player_direction
+        SET current_room = new room
+        DISPLAY "You moved to " + current_room
+    ELSE
+        DISPLAY "You cannot go that way."
+    END IF
+END WHILE
+
+END
